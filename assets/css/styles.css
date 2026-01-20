@@ -1,0 +1,47 @@
+.diagonal-footer {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+  background: #0a2e60;
+  color: white;
+}
+
+/* Red bottom layer */
+
+.diagonal-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #d7141a;
+  z-index: 1;
+  clip-path: polygon( 0 60%, 100% 25%, 100% 100%, 0 100% );
+}
+
+/* White triangle layer – middle left, between blue and red */
+
+.diagonal-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 2;
+  clip-path: polygon( 0% 0%, 0 60%, 35% 48%, 0 25% );
+}
+
+/* Content on top */
+
+.diagonal-footer .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Styling for readability */
+
+.diagonal-footer a, .diagonal-footer p {
+  color: white !important;
+}
+
+.diagonal-footer .bi {
+  fill: white;
+}
+
